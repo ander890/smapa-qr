@@ -32,7 +32,7 @@ if($n){
         $url = "";
     }
 
-    $unique_id = sha1($nama.time());
+    $unique_id = sha1($nama.time()).sha1(time());
     $nama_tumbuhan = $n;
     $deskripsi = post("deskripsi");
     $kategori = post("kategori");
@@ -42,8 +42,8 @@ if($n){
     $logopath = 'img/smapa.png';
     $namafile = $nama_tumbuhan.".png";
     $quality = 'H'; 
-    $ukuran = 10; 
-    $padding = 4;
+    $ukuran = 15; 
+    $padding = 3;
     
     QRCode::png($isi_teks,"temp/".$namafile,QR_ECLEVEL_H,$ukuran,$padding);
     $filepath = "temp/".$namafile;

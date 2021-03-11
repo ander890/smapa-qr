@@ -2,12 +2,12 @@
 
 $host = "localhost";
 $username = "root";
-$password = "";
+$password = "dvlprs...??890";
 $db = "smapa";
 
 $koneksi = mysqli_connect($host, $username, $password, $db) or die("GAGAL KONEKSI DENGAN DB");
 
-define("BASE_URL", "http://localhost/smapa");
+define("BASE_URL", "https://scan.dvlprs.xyz");
 session_start();
 
 

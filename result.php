@@ -1,7 +1,7 @@
 <?php
 include_once("admin/koneksi.php");
 
-$r = get("r");
+$r = get("q");
 
 $q = mysqli_query($koneksi, "SELECT * FROM tumbuhan WHERE unique_id='$r'");
 $row = mysqli_fetch_assoc($q);

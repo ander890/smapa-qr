@@ -5,6 +5,9 @@ if(!isset($_SESSION['login'])){
     header("LOCATION:login.php");
 }
 
+$q1 = mysqli_query($koneksi, "SELECT * FROM tumbuhan");
+$count_tumbuhan = mysqli_num_rows($q1);
+
 ?>
 <?php include_once("header.php"); ?>
 
@@ -26,7 +29,7 @@ if(!isset($_SESSION['login'])){
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Jumlah Tumbuhan</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $count_tumbuhan ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-seedling fa-2x text-gray-300"></i>
@@ -44,7 +47,7 @@ if(!isset($_SESSION['login'])){
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Jumlah Scan</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">10000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-qrcode fa-2x text-gray-300"></i>
@@ -161,7 +164,7 @@ if(!isset($_SESSION['login'])){
                 pointHoverBorderColor: "rgba(78, 115, 223, 1)",
                 pointHitRadius: 10,
                 pointBorderWidth: 2,
-                data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             }],
         },
         options: {
@@ -239,7 +242,7 @@ if(!isset($_SESSION['login'])){
         data: {
             labels: ["Buah", "Bunga", "Daun"],
             datasets: [{
-                data: [55, 30, 15],
+                data: [0, 0, 0],
                 backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
                 hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
                 hoverBorderColor: "rgba(234, 236, 244, 1)",

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>QR Scanner Demo</title>
+    <title>QR Scanner SMA 4</title>
 </head>
 <body>
 <style>

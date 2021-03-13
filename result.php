@@ -6,17 +6,9 @@ $r = get("q");
 $q = mysqli_query($koneksi, "SELECT * FROM tumbuhan WHERE unique_id='$r'");
 $row = mysqli_fetch_assoc($q);
 $c = [
-    "#f44336",
-    "#9c27b0",
-    "#3f51b5",
-    '#2196f3',
     "#4caf50",
-    "#ffc107",
-    "#ff5722",
-    "#795548",
-    "#9e9e9e",
   ];
-  
+
   shuffle($c);
 
 ?>
@@ -56,7 +48,17 @@ $c = [
     <div class="container">
       <div class="card" style="margin-top:10%">
         <div class="card-header">
-          <center><h3><?= $row['nama'] ?></h3></center>
+          <div class="row">
+            <div class="col-3">
+              <img width="100" style="background:transparent;border: none;" src="admin/img/smapanobg2.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-6">
+              <center><h4 style='display: table-cell;word-wrap: break-word;'><?= $row['nama'] ?></h4></center>
+            </div>
+            <div class="col-3">
+              <img width="100" style="background:transparent;border: none;" src="adiwiyata2.png" alt="" class="img-fluid">
+            </div>
+          </div>
         </div>
         <div class="card-body">
             <?php
@@ -65,12 +67,12 @@ $c = [
             }
 
             ?>
-          <h5 class="card-text"><?= $row['deskripsi'] ?></h5>
+          <h5 class="card-text" style='word-wrap: break-word;'><?= $row['deskripsi'] ?></h5>
         </div>
       </div>
 
     </div>
-
+    <br><br><br>
     <footer class="footer"><a class="btn btn-block btn-secondary" style="border-radius: 0 !important;">&copy; SMA Negeri 4 Semarang</a></footer>
 
 

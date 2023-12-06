@@ -4,8 +4,13 @@ include_once("koneksi.php");
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-if($username && $password){
+if(isset($username) && isset($password)){
     $password = sha1($password);
+
+    //SOLUSI
+    // $username = mysqli_real_escape_string($koneksi, $username);
+    // $password = mysqli_real_escape_string($koneksi, $password);
+    
     $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password'");
     $count = mysqli_num_rows($query);
 

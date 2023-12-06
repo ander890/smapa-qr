@@ -1,8 +1,8 @@
 <?php
 include_once("koneksi.php");
 
-$username = post("username");
-$password = post("password");
+$username = $_POST["username"];
+$password = $_POST["password"];
 
 if($username && $password){
     $password = sha1($password);

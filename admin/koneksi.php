@@ -1,13 +1,13 @@
 <?php
 
-$host = "localhost";
+$host = "localhost:8889";
 $username = "root";
-$password = "";
-$db = "smapa";
+$password = "root";
+$db = "siber";
 
 $koneksi = mysqli_connect($host, $username, $password, $db) or die("GAGAL KONEKSI DENGAN DB");
 
-define("BASE_URL", "http://localhost/smapa");
+define("BASE_URL", "http://localhost/sistem-siber");
 session_start();
 
 

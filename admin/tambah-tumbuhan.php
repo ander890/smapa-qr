@@ -11,23 +11,29 @@ $n = post("nama");
 if($n){
 
     if(isset($_FILES['foto'])){
-        $ekstensi_diperbolehkan = array('png','jpg');
         $nama = $_FILES['foto']['name'];
-        $x = explode('.', $nama);
-        $ekstensi = strtolower(end($x));
-        $ukuran = $_FILES['foto']['size'];
         $file_tmp = $_FILES['foto']['tmp_name']; 
+        move_uploaded_file($file_tmp, '../file/'.$nama);
+        $url = BASE_URL."/file/".$nama;
+
+        // SOLUSI
+        // $ekstensi_diperbolehkan = array('png','jpg');
+        // $nama = $_FILES['foto']['name'];
+        // $x = explode('.', $nama);
+        // $ekstensi = strtolower(end($x));
+        // $ukuran = $_FILES['foto']['size'];
+        // $file_tmp = $_FILES['foto']['tmp_name']; 
             
-        if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
-            if($ukuran < 1044070){ 
-                move_uploaded_file($file_tmp, '../file/'.$nama);
-                $url = BASE_URL."/file/".$nama;
-            }else{
-                $url = "";
-            }
-        }else{
-            $url = "";
-        }
+        // if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+        //     if($ukuran < 1044070){ 
+        //         move_uploaded_file($file_tmp, '../file/'.$nama);
+        //         $url = BASE_URL."/file/".$nama;
+        //     }else{
+        //         $url = "";
+        //     }
+        // }else{
+        //     $url = "";
+        // }
     }else{
         $url = "";
     }

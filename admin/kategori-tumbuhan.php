@@ -1,8 +1,17 @@
 <?php
 include_once("koneksi.php");
 
-if(!isset($_SESSION['login'])){
-    header("LOCATION:login.php");
+if(!isset($_SESSION['login'])){    
+    echo "
+    <html>
+    <script>
+    window.location = 'http://localhost/sistem-siber/admin/login.php';
+    </script>
+    </html>
+    ";
+    
+    // SOLUSI
+    // header("LOCATION:login.php");
 }
 
 $nama = post("nama");
